@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+
+// Structure declaration
+struct Student {
+    char name[50];
+    int roll_no;
+    char mobile_no[15];
+    float CGPA;
+    char DoB[15];
+    char course[50];
+    int year;
+};
+
+// Function to read data of one student
+void readStudent(struct Student *s) {
+    printf("\nEnter Name: ");
+    scanf(" %[^\n]", s->name);
+
+    printf("Enter Roll No: ");
+    scanf("%d", &s->roll_no);
+
+    printf("Enter Mobile No: ");
+    scanf("%s", s->mobile_no);
+
+    printf("Enter CGPA: ");
+    scanf("%f", &s->CGPA);
+
+    printf("Enter Date of Birth: ");
+    scanf("%s", s->DoB);
+
+    printf("Enter Course: ");
+    scanf(" %[^\n]", s->course);
+
+    printf("Enter Year: ");
+    scanf("%d", &s->year);
+}
+
+// Function to display student data
+void displayStudent(struct Student s) {
+    printf("\n
