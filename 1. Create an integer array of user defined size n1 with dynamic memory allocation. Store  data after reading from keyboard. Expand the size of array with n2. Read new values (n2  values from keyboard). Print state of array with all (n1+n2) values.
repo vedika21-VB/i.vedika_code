@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int *arr;
+    int n1, n2, i;
+
+    // Step 1: Input initial size
+    printf("Enter initial size (n1): ");
+    scanf("%d", &n1);
+
+    
+    arr = (int *)malloc(n1 * sizeof(int));
+
+    // Step 2: Input elements
+    printf("Enter %d elements:\n", n1);
+    for(i = 0; i < n1; i++) 
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // Step 3: Expand size
+    printf("Enter additional size (n2): ");
+    scanf("%d", &n2);
+
+    arr = (int *)realloc(arr, (n1 + n2) * sizeof(int));
+
+    // Step 4: Input new elements
+    printf("Enter %d more elements:\n", n2);
+    for(i = n1; i < n1 + n2; i++) 
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // Step 5: Print full array
+    printf("Final array elements:\n");
+    for(i = 0; i < n1 + n2; i++) 
+    {
+        printf("%d ", arr[i]);
+    }
+
+    // Free memory
+    free(arr);
+
+    return 0;
+}
